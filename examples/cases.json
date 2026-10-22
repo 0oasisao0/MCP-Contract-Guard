@@ -1,0 +1,40 @@
+{
+  "cases": [
+    {
+      "id": "search-empty-result",
+      "tool": "search_notes",
+      "arguments": {
+        "query": "hello",
+        "limit": 25
+      },
+      "structuredContent": {
+        "matches": [],
+        "total": 0
+      }
+    },
+    {
+      "id": "search-short-query",
+      "tool": "search_notes",
+      "arguments": {
+        "query": "hi",
+        "limit": 1
+      },
+      "structuredContent": {
+        "matches": [
+          {
+            "id": "synthetic-note-1",
+            "title": "Example note"
+          }
+        ],
+        "total": 1
+      }
+    },
+    {
+      "id": "search-default-options",
+      "tool": "search_notes",
+      "arguments": {
+        "query": "example"
+      }
+    }
+  ]
+}

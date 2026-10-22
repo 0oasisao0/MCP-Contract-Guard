@@ -1,0 +1,57 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mcp-contract-guard"
+version = "0.1.0"
+description = "Witness-first, offline MCP tool contract regression gate"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{name = "0oasisao0"}]
+keywords = ["mcp", "json-schema", "contract-testing", "regression", "agents"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Software Development :: Testing",
+]
+dependencies = ["jsonschema>=4.23,<5", "referencing>=0.35,<1"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "pytest-cov>=6,<8", "ruff>=0.9", "build>=1.2", "twine>=6"]
+
+[project.scripts]
+mcp-contract-guard = "mcp_contract_guard.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/0oasisao0/MCP-Contract-Guard"
+Issues = "https://github.com/0oasisao0/MCP-Contract-Guard/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mcp_contract_guard"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.coverage.run]
+branch = true
+source = ["mcp_contract_guard"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 90
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
