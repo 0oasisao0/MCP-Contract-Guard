@@ -2,7 +2,7 @@
 # Inventory only; not a universal lockfile. Project installed editable separately.
 attrs==26.1.0
 build==1.6.1
-certifi==2026.10.19
+certifi==2026.10.23
 cffi==2.1.1
 charset-normalizer==3.5.2
 coverage==7.16.2
