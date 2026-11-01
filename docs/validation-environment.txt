@@ -36,7 +36,7 @@ requests-toolbelt==1.0.0
 rfc3986==2.0.0
 rich==15.0.0
 rpds-py==2026.9.1
-ruff==0.17.1
+ruff==0.17.3
 SecretStorage==3.5.0
 twine==7.0.0
 typing_extensions==4.16.0
